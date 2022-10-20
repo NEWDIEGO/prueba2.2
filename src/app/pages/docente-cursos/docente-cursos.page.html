@@ -1,0 +1,11 @@
+
+<ion-card>
+<ion-list *ngFor="let c of clases">
+<ion-item>
+  <p>Clase: {{c.nombre}} </p>
+  <p>Sigla: {{c.sigla}}</p>
+  <p>ID: {{c.id}}</p>
+  <ion-button fill="outline"(click)="generarCodigo(c.id)">Iniciar clase</ion-button>
+</ion-item>
+</ion-list>
+</ion-card>
