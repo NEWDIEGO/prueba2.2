@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { v4 } from 'uuid';
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 
 
 @Component({
@@ -8,13 +9,22 @@ import { v4 } from 'uuid';
   styleUrls: ['./qr.page.scss'],
 })
 export class QrPage implements OnInit {
-
+  
+  code: any;
   elementType = 'canvas';
   value = '';
 
-  constructor() { }
+  constructor(private barcodeScanner: BarcodeScanner) { }
 
-  ngOnInit() {
+  ngOnInit(){}
+
+  scan(){
+    this.barcodeScanner.scan().then(barcodeData => {
+      this.code=barcodeData.text;
+      console.log('Barcode data', barcodeData);
+     }).catch(err => {
+         console.log('Error', err);
+     });
   }
 
   generarCodigo(){

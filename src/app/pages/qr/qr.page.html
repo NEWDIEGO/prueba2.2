@@ -2,3 +2,8 @@
   <ngx-qrcode [elementType]="elementType" [value]="value"></ngx-qrcode>
   <ion-input [(ngModel)]="value" disabled="true"></ion-input>
 </ion-card>
+
+<ion-content>
+  <io-button (click)="scan()">Escanear codigo</ion-button>
+    {{code}}
+</ion-content>

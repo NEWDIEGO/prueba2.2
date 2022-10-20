@@ -22,3 +22,4 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
   declarations: [QrPage]
 })
 export class QrPageModule {}
+
